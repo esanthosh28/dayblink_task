@@ -41,9 +41,17 @@
 
                         if(!data.error){
                             alert('Product added to cart');
-//                            window.location.href="/product_list";
+                            window.location.href="product_list";
                         } else {
                             alert(data.msg);
+                        }
+                    },
+                    statusCode: {
+                        401: function() {
+                            alert('Please login to proceed further')
+                        },
+                        500: function(xhr) {
+                            alert('some error occured');
                         }
                     }
                 });

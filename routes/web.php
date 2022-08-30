@@ -21,12 +21,14 @@ Route::get('/',[UserController::class, 'login']);
 Route::post('/register/form',[UserController::class, 'register']);
 Route::post('/login/verify',[UserController::class, 'loginVerify']);
 Route::post('/login/customLogin',[UserController::class, 'customLogin']);
+Route::get('/product_list', [ProjectController::class, 'product_list']);
+Route::get('/product/{id}', [ProjectController::class, 'product']);
 
 Route::group(['middleware' => ['auth.basic']], function() {
 
     Route::resource('products', ProjectController::class);
-    Route::get('/product_list', [ProjectController::class, 'product_list']);
-    Route::get('/product/{id}', [ProjectController::class, 'product']);
+
+
     Route::get('/product/{id}/edit', [ProjectController::class, 'edit']);
     Route::post('/addToCart', [CartController::class,'addToCart']);
     Route::post('/placeOrder', [CartController::class,'placeOrder']);

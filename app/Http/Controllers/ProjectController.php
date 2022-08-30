@@ -17,7 +17,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Products::latest()->paginate(50);
+        $projects = Products::where('created_by',Auth::id())
+        ->latest()->paginate(50);
 
         return view('products.index', compact('projects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

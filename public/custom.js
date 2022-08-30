@@ -3,8 +3,8 @@ $( document ).ready(function() {
     var base_path = window.location.origin;
     var baseUrl = '';
 
-    if (base_path == 'http://localhost' || base_path == 'http://laravel_8_crud-master.test') {
-        baseUrl = 'http://laravel_8_crud-master.test/api/';
+    if (base_path == 'http://localhost' || base_path == 'http://day_blink_task.test') {
+        baseUrl = 'http://day_blink_task.test/api/';
     }
 
     function asyncAjaxCall(url, method, postData) {
@@ -12,7 +12,7 @@ $( document ).ready(function() {
         var getInternetState = window.navigator.onLine;
 
         if (!getInternetState) {
-           alert("check notwork connection");
+           alert("check network connection");
             return;
         }
 

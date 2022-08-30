@@ -7,7 +7,7 @@
                 <h2>Product Admin Panel</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="/product_list" title="Create a project"> Product list in site
+                <a class="btn btn-success" href="product_list" title="Create a project"> Product list in site
                 </a>
             </div>
             <div class="pull-right">

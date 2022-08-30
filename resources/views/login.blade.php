@@ -79,7 +79,7 @@
 								alert('logged in successfully..!');
 
                                 setTimeout(function(){
-                        			window.location.href="/products";
+                        			window.location.href="products";
                                 }, 2000);
                             }else{
                                 $('.err_msg').show().html('<span style="color:red">'+data.msg+'</span>');
@@ -110,7 +110,16 @@
 			            	$('.err_msg').show().html('<span style="color:red">'+res.message+'</span>');
 
 			            }
-			        }
+			        },
+                    statusCode: {
+                        401: function() {
+                            alert('Please login to proceed further')
+                        },
+                        500: function(xhr) {
+                            alert('some error occured');
+                        }
+                    }
+
 			    });
 			}
 
